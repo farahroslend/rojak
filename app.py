@@ -23,7 +23,7 @@ def homepage():
 @app.route("/get_words")
 def words():
     #defining words array from the mongodb collection words
-    words=mongo.db.words.find()
+    tasks = words=mongo.db.words.find()
     #words in blue is what the template will call the cluster of data from words in white
     return render_template("dictionary.html", words=words)
 
