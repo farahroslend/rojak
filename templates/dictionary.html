@@ -1,15 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictionary</title>
-</head>
-<body>
+{% extends "nav_bar.html" %}
+{% block nav_bar %}
+
+    <h1>Slangs </h1><br>
     {% for word in words %}
         {{ word.words_name }} <br>
         {{ word.meaning }} <br>
         {{ word.language_category }} <br>
     {% endfor %}
-</body>
-</html>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="{{ url_for('homepage') }}">link to homepage</a>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

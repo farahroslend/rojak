@@ -17,13 +17,17 @@ mongo = PyMongo(app)
 
 @app.route("/")
 
-@app.route("/get_words")
+def homepage():
+    return render_template("homepage.html")
 
+@app.route("/get_words")
 def words():
     #defining words array from the mongodb collection words
     words=mongo.db.words.find()
     #words in blue is what the template will call the cluster of data from words in white
     return render_template("dictionary.html", words=words)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
