@@ -27,6 +27,9 @@ def words():
     #words in blue is what the template will call the cluster of data from words in white
     return render_template("dictionary.html", words=words)
 
+@app.route("/add_slang")
+def add_slang():
+    return render_template("add_slang.html")
 
 
 if __name__ == "__main__":
