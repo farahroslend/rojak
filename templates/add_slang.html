@@ -19,11 +19,29 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Language make this drop down</label>
+            <select id="language_category" name="language_category" class="validate" required>
+            <option value="" disabled selected></option>
+            {% for category in categories %}
+            <option value="{{ category.language_category }}">{{ category.language_category }}</option>
+            {% endfor %}
+            </select>
+            <label for="language_category">Language</label>
         </div>
       </div>
     </form>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+  </script>
 
 {% endblock %}

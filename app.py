@@ -29,7 +29,8 @@ def words():
 
 @app.route("/add_slang")
 def add_slang():
-    return render_template("add_slang.html")
+    categories = words=mongo.db.language.find().sort("language_category",1)
+    return render_template("add_slang.html", categories=categories)
 
 
 if __name__ == "__main__":
