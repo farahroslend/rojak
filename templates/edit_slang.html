@@ -1,10 +1,10 @@
 {% extends "nav_bar.html" %}
 {% block nav_bar %}
 
-<h1>Share a Slang </h1><br>
+<h1>Edit a Slang </h1><br>
     
   <div class="row">
-    <form class="col s12" method="POST" action="{{ url_for('add_slang') }}">
+    <form class="col s12" method="POST" action="{{ url_for('edit_word', word_id=word._id) }}">
       <!--Word-->
       <div class="row">
         <div class="input-field col s12">
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large waves-effect waves-light orange">
-                        Submit <i class="fas fa-plus-square right"></i>
+                        Update<i class="fas fa-plus-square right"></i>
                     </button>
                 </div>
             </div>
