@@ -1,6 +1,6 @@
 # Rojak - Data Centric Development Milestone Project
 Rojak' is a Malaysian mixed fruit and vegetable salad, that is enjoyed by all races and ethinicities in Malaysia. Keyword: Mixed. It is also used on a colloquial basis to mean a multi-linguistic fashion of speaking. The picture above concisely sets an example on a sentence that is 'rojak'. This website serves as an open source anyone-can-edit dictionary of 'rojak'-applicable slangs commonly used in Malaysia.
-<https://rojak-malaysian-slangs.herokuapp.com/>
+Deployed website here: <https://rojak-malaysian-slangs.herokuapp.com/>
 
 
 
@@ -100,13 +100,14 @@ The theme for the project is clean, minimalism, with a black-orange colour theme
 * Used Google Chrome's Inspect Feature to improve layout design and troubleshoot bugs 
 
 ### Debugging
-* Map loads perfectly on the landing page, panning into the Asia region with functional zoom in and out buttons
-* Map displays all the markers for the diving spots, when webpage is loaded in all 3 viewing port sizes (large, medium, small), and the name of the location pops up when clicked 
-* Marker pops up the names of the diving location with the link to a page with more details on the area, when clicked. Need to use `coordinate` in the javascript codes to view the OpenStreetMap coordinates to pin the location name pop up close to where the marker is. This code is removed after deployment.
-* Links at the markers ushers user to the right section of the travel deals page 
-* Links to external travel vendors works well
-* Pop up closes when other markers or anywhere else are clicked 
-* Navigation bar contents links to the right pages when clicked
+* Landing page and navbar working well to link client to homepage, dictionary, and a form to add new words and it's descriptions.
+* Dictionary of words shows all the data from MongoDB in card format with functional edit, delete buttons
+* Edit button correctly props up a form prefilled with the contents existing in the card (word, meaning, language) and allows for editting. Update posted into MongoDB, and the dictionary of the website. User redirected to the dictionary with a flash message to notify successful edit.
+* Delete button removes the word card and notifies client when client is redirected back to the dictionary
+* Contribution button at navbar pcorrectly links to 'share a slang' form, on which user can input new slangs into MongoDB and the website. Working dropdown box. Successful implementation.
+* Submit button not sending POST request, because the POST method cannot be stored in an anchor. Changed from anchor to button and POST worked well to send user input data to MongoDB.
+* dictionary.html page not loading it's page specific contents after extending from the nav_bar.html template, due to a comment section with an {% endblock %}. Removing the comment, fixed the issue; dictionary.html contents fully loaded.
+
 
 
 ### Media Responsiveness
