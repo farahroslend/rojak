@@ -23,15 +23,13 @@
             <h5 class="header col s12 light">'Rojak' is a Malaysian mixed fruit and vegetable salad, that is enjoyed by all races and ethinicities in Malaysia. Keyword: Mixed. It is also used on a colloquial basis to mean a multi-linguistic fashion of speaking. The picture above concisely sets an example on a sentence that is 'rojak'. This website serves as an open source anyone-can-edit dictionary of 'rojak'-applicable slangs commonly used in Malaysia.</h5>
         </div>
         <div class="row center">
-            <a href="" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+            <a href="{{ url_for('get_words') }}" id="download-button" class="btn-large waves-effect waves-light orange">View Dictionary</a>
         </div>
         <br><br>
 
         </div>
     </div>    
     
-    Homepage    
-    <a href="{{ url_for('get_words') }}">link to dictionary</a>
 </body>
 </html>
 {% endblock %}
