@@ -21,15 +21,25 @@ def homepage():
     return render_template("homepage.html")
 
 @app.route("/get_words")
-def words():
+def get_words():
     #defining words array from the mongodb collection words
-    tasks = words=mongo.db.words.find()
+    words = list(mongo.db.words.find())
     #words in blue is what the template will call the cluster of data from words in white
     return render_template("dictionary.html", words=words)
 
-@app.route("/add_slang")
+@app.route("/add_slang", methods=["GET","POST"])
 def add_slang():
-    categories = words=mongo.db.language.find().sort("language_category",1)
+    if request.method == "POST":
+        words = {
+            "words_name": request.form.get("words_name"),
+            "meaning": request.form.get("meaning"),
+            "language_category": request.form.get("language_category")
+        }
+        mongo.db.words.insert_one(words)
+        flash("Slang successfully added! Thank you for your contribution.")
+        return redirect(url_for("get_words"))
+
+    categories = mongo.db.language.find().sort("language_category",1)
     return render_template("add_slang.html", categories=categories)
 
 
