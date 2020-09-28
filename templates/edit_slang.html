@@ -8,24 +8,28 @@
       <!--Word-->
       <div class="row">
         <div class="input-field col s12">
-          <input id="words_name" name="words_name" class="materialize-textarea validate" type="text" required></input>
+          <input id="words_name" name="words_name" class="materialize-textarea validate" type="text" value="{{ word.words_name }}" required></input>
           <label for="words_name">Slang</label>
         </div>
       </div>
       <!--Meaning-->
       <div class="row">
         <div class="input-field col s12">
-          <input id="meaning" name="meaning" class="materialize-textarea validate" type="text" required></input>
-          <label for="textarea1">Meaning of Slang</label>
+          <input id="meaning" name="meaning" class="materialize-textarea validate" type="text" value="{{ word.meaning }}" required></input>
+          <label for="meaning">Meaning of Slang</label>
         </div>
       </div>
       <!--Language category-->
       <div class="row">
         <div class="input-field col s12">
             <select id="language_category" name="language_category" type="text" class="validate" required>
-            <option value="" disabled selected></option>
+            <option value="" disabled></option>
             {% for category in categories %}
-            <option value="{{ category.language_category }}">{{ category.language_category }}</option>
+                {% if category.language_category == word.language_category %}
+                <option value="{{ category.language_category }}" selected>{{ category.language_category }}</option>
+                {% else %}
+                <option value="{{ category.language_category }}">{{ category.language_category }}</option>
+                {% endif %}
             {% endfor %}
             </select>
             <label for="language_category">Language</label>
@@ -35,6 +39,9 @@
         <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
+                    <a href="{{ url_for('get_words') }}" class="btn-large grey lighten-1">
+                        Cancel <i class="fas fa-plus-square right"></i>
+                    </a>
                     <button type="submit" class="btn-large waves-effect waves-light orange">
                         Update<i class="fas fa-plus-square right"></i>
                     </button>
