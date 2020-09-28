@@ -80,7 +80,7 @@ The theme for the project is clean, minimalism, with a black-orange colour theme
   * Used to store website client input data, and for website admin to manually CRUD data
 
 ## Data Structure
-[Visual overview](https://github.com/farahroslend/rojak/blob/master/static/media/data_structure.jpeg)
+![alt text](https://github.com/farahroslend/rojak/blob/master/static/media/data_structure.jpeg)
 
 
 ## Version Control
