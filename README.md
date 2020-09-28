@@ -147,5 +147,5 @@ From my own knowledge as a Malaysian familiar with the local colloquial.
 Images were sourced from: [Google Images](https://twitter.com/Botanygeek/status/1063036281154879488/photo/1)
 
 ### Codes
-* Used Bootstrap Materialise Start Up Template to set up the navigation bar and landing page, with some customisation to fit the theme of this project.
+* Used [Materialize Starter Template](https://materializecss.com/getting-started.html) to set up the navigation bar and landing page, with some customisation to fit the theme of this project.
 * Customisation of Code Institute's Flask Task Manager Project (followed Tim's lessons; not published yet in the CI website), to evolve the website into a functional open source online dictionary
