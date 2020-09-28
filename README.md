@@ -1,7 +1,6 @@
 # Rojak - Data Centric Development Milestone Project
-Website for exploring scuba diving sites in Asia. 
-Also hosts descriptions on what are the highlights in the diving area such as the flora and fauna that's endemic to that region, local attractions like restaurants to try out and diving packages that can inspire the holiday maker to plan for a visit.
-<https://farahroslend.github.io/scubasia/SCUBAsia/index.html>
+Rojak' is a Malaysian mixed fruit and vegetable salad, that is enjoyed by all races and ethinicities in Malaysia. Keyword: Mixed. It is also used on a colloquial basis to mean a multi-linguistic fashion of speaking. The picture above concisely sets an example on a sentence that is 'rojak'. This website serves as an open source anyone-can-edit dictionary of 'rojak'-applicable slangs commonly used in Malaysia.
+<https://rojak-malaysian-slangs.herokuapp.com/>
 
 
 
@@ -12,7 +11,7 @@ The theme for the project is clean, minimalism, with a black-orange colour theme
 
 * As a language-enthusiast, I want to learn Malaysian slangs, so I can sound more local when I speak some of the Malaysian languages
 * As a Malaysian citizen, I want to contribute to the list of Malaysian slangs, so Malaysians from other ethinicities and tourists can understand the local speak from different ethinicities more intimately
-* As a member of an ethnic group in Malaysia, I want to help refine the definitions of some of the listed words in the website that's my mother tongue, so that the best information can be shared to people from other ethinicities with a different mother tongue
+* As a member of an ethnic group in Malaysia, I want to help refine the definitions of some of the listed words in the website that's my mother tongue, so that the best meaning of a slang can be shared to people from other ethinicities with a different mother tongue
 * As a knowledgable Malaysian, I want to correct any mistakes in the descriptions of the jargon shared, so the right information can be conveyed
 * As a generally nice human being, I want to delete some words in the list, so that the list of words are always family-friendly and non-offensive and if the slang is not applicable anywhere in Malaysia
 
@@ -84,7 +83,7 @@ The theme for the project is clean, minimalism, with a black-orange colour theme
 
 
 ## Version Control
-* Development of the website using the Gitpod IDE, launched by including `gitpod.io/#` at the beginning of the SCUBAsia Github repository, as prescribed by Github [here] (https://www.gitpod.io/docs/getting-started/)
+* Development of the website using the Gitpod IDE, launched by including `gitpod.io/#` at the beginning of the rojak Github repository, as prescribed by Github [here] (https://www.gitpod.io/docs/getting-started/)
 * Accidentally installed a branched version of the repository in Gitpod farahroslend/gitpod-setup, thereby needing pull requests to merge the new versions of the codes with the master branch
 * Used the following commands in the CLI in Gitpod to for version control:
     * `git add .`
@@ -112,28 +111,40 @@ The theme for the project is clean, minimalism, with a black-orange colour theme
 
 ### Media Responsiveness
 * On large screens, nav bar displays all the contents it hosts in its div
-* On small screens, the nav bar condenses the right half of the contents of its div (home, travel deals, contact us) into a collapsible button
-* Since the design of the website is minimalistic, there is not much need to significantly change the layout of the other divs, and so the divs would re-scale relative to the size of the viewing port using css elements `height: 50vh` and `width: 50vw` to keep the scale of the map, images appropriate.
+* On small screens, the nav bar condenses the right half of the contents of its div into a collapsible button that pulls out a sidebar tab when clicked to view all the elements in the navbar
+* Since the design of the website is minimalistic, there is not much need to significantly change the layout of the other divs
 
 
 ## Deployment
-For publish my website in Github pages, I've followed the following steps as recommended by GitHub [here](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site):
-* On GitHub, navigate to my site's [repository](https://github.com/farahroslend/scubasia) 
-* Go to Settings > Options > GitHub Pages
-* Master branch, /root selected as publishing source
-* Saved
+Narrating the process from the start to the end:
+* Gitpod CLI
+    * `$ pip3 freeze --local > requirements.txt`
+    * `echo web : python app.py > Procfile`
 
-The deployed website is live [here](https://farahroslend.github.io/scubasia/SCUBAsia/index.html). 
-`/SCUBAasia/index.html` added at the end of the deployed link, since the master branch has multiple folders to also host the Bootstrap Bare Template, and its dependencies.
+* Heroku website
+    * created new app 
+    * connect with Github
+    * settings -> reveal config vars -> input for the following keys: IP_POT, SECRET_KEY, MONGO_URI, MONGO_DBNAME and their respective keys
+
+* Gitpod CLI
+    * `git add requirement.txt`
+    * `git commit -m "added requirement.txt "`
+    * `git add Procfile`
+    * `git commit -m "added Procfile"`
+    * `git push"`
+
+* Heroku website
+    * enable auto deployment -> deploy branch  
+    * [deployed Heroku app](https://rojak-malaysian-slangs.herokuapp.com/)
 
 
 ## Credits
 ### Content
-From [WikiTravels](https://wikitravel.org/en/Main_Page)
+From my own knowledge as a Malaysian familiar with the local colloquial.
 
 ### Media
-Images were sourced from: [Google Images](https://www.google.com/imghp?hl=EN), [Pintrest](https://www.pinterest.com/)
+Images were sourced from: [Google Images](https://twitter.com/Botanygeek/status/1063036281154879488/photo/1)
 
-### Acknowledgements
-* Used Bootstrap Bare Templates to set up the navigation bar and landing page, with some customisation to fit the theme of this project.
-* Significantly modified some javascript codes from [here](https://openstreetmap.be/en/projects/howto/openlayers.html) to create more markers, add description at the relevant markers when clicked with link to the diving spot's decriptions and travel deals.
+### Codes
+* Used Bootstrap Materialise Start Up Template to set up the navigation bar and landing page, with some customisation to fit the theme of this project.
+* Customisation of Code Institute's Flask Task Manager Project (followed Tim's lessons; not published yet in the CI website), to evolve the website into a functional open source online dictionary
