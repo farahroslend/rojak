@@ -45,6 +45,16 @@ def add_slang():
 
 @app.route("/edit_word/<word_id>", methods=["GET","POST"])
 def edit_word(word_id):
+    if request.method == "POST":
+        submit = {
+            "words_name": request.form.get("words_name"),
+            "meaning": request.form.get("meaning"),
+            "language_category": request.form.get("language_category")
+        }
+        mongo.db.words.update({"_id":ObjectId(word_id)}, submit)
+        flash("Slang successfully updated!")
+        
+
     word = mongo.db.words.find_one({"_id": ObjectId(word_id)})
     
     categories = mongo.db.language.find().sort("language_category",1)
